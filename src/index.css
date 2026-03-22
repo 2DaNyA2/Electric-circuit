@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Hide scrollbar on touch devices, but show a thin one on desktop */
+@media (hover: none) and (pointer: coarse) {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hide-scrollbar::-webkit-scrollbar {
+    height: 6px;
+    display: block;
+  }
+  .hide-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .hide-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+  .hide-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  .hide-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+}
